@@ -1,6 +1,6 @@
 name		          "tomcat-solr"
-maintainer        "Felipe Espinoza"
-maintainer_email  "fespinozacast@gmail.com"
+maintainer        "The Amazing DevTeam"
+maintainer_email  "dev@archdaily.com"
 license           "Apache 2.0"
 description       "Installs and configures tomcat 7 and solr 4"
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))

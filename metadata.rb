@@ -11,4 +11,4 @@ recipe            "tomcat-solr", "Installs and configure tomcat and solr to use 
   supports os
 end
 
-depends "java::oracle"
+#depends "java::oracle"

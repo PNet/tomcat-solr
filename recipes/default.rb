@@ -24,7 +24,7 @@ end
 bash 'unpack solr' do
   user 'root'
   cwd '/tmp'
-  code "tar -xzvf apache-solr-#{node[:solr][:version]}.tgz"
+  code "tar -xzvf solr-#{node[:solr][:version]}.tgz"
   not_if "test -d #{node[:solr][:unpack_path]}"
 end
 
@@ -32,7 +32,7 @@ bash "install solr on tomcat" do
   user "root"
   cwd node[:solr][:unpack_path]
   code <<-EOH
-    cp -f dist/apache-solr-#{node[:solr][:version]}.war /var/lib/tomcat7/webapps/solr.war
+    cp -f dist/solr-#{node[:solr][:version]}.war /var/lib/tomcat7/webapps/solr.war
     cp -Rf example/solr/ /var/lib/tomcat7/solr/
   EOH
   # TODO: not if case

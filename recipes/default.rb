@@ -58,6 +58,8 @@ end
 bash "install solr on tomcat" do
   user "root"
   code <<-EOH
+    cp /tmp/solr-#{node[:solr][:version]}/example/lib/ext/* /usr/share/tomcat7/lib/
+    cp /tmp/solr-#{node[:solr][:version]}/example/resources/log4j.properties /usr/share/tomcat7/lib/
     chown -R tomcat7:tomcat7 /var/lib/tomcat7/
     chmod 775 /var/lib/tomcat7/conf/tomcat-users.xml
     service tomcat7 restart

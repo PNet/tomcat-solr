@@ -35,7 +35,7 @@ bash "install solr on tomcat" do
     cp -f dist/solr-#{node[:solr][:version]}.war /var/lib/tomcat7/webapps/solr.war
     cp -Rf example/solr/ /var/lib/tomcat7/solr/
   EOH
-  # TODO: not if case
+  not_if "test -d /var/lib/tomcat7/solr/"
 end
 
 # copy the solr config

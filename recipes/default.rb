@@ -24,7 +24,7 @@ end
 bash 'unpack solr' do
   user 'root'
   cwd '/tmp'
-  code "tar -xzvf solr-#{node[:solr][:version]}.tgz"
+  code "tar -xzvf apache-solr-#{node[:solr][:version]}.tgz"
   not_if "test -d #{node[:solr][:unpack_path]}"
 end
 

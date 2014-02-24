@@ -35,5 +35,6 @@
 	-->
 	<role rolename='manager' />
 	<role rolename='admin' />
-	<user username='<%= node[:tomcat][:user][:username] %>' password='<%= node[:tomcat][:user][:password] %>' roles='manager, admin, manager-gui' />
+	<role rolename='solr_admin' />
+	<user username='<%= node[:tomcat][:user][:username] %>' password='<%= node[:tomcat][:user][:password] %>' roles='manager, admin, manager-gui, solr_admin' />
 </tomcat-users>
